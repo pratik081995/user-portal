@@ -3,26 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import {AppRoutingModule} from './app-routing.module';
-import {ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
-import { AddUserComponent } from './add-user/add-user.component';
-import { EditUserComponent } from './edit-user/edit-user.component';
-import {ListUserComponent} from './list-user/list-user.component';
-import {UserService} from './service/user.service';
+import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './service/user.service';
+import { UserModule } from './user/user.module';
+import { UserRoutingModule } from './user/user-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    ListUserComponent,
-    AddUserComponent,
-    EditUserComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    UserRoutingModule,
     ReactiveFormsModule,
+    UserModule,
     HttpClientModule
   ],
   providers: [UserService],
