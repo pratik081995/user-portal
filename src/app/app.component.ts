@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'user-registration';
+  routerLinkList ="/users/list-user";
+  routerLinkAdd = "/users/add-user";
 }

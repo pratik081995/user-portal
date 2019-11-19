@@ -4,9 +4,8 @@
       Welcome to Saint Gobain
     </h1>
   </div>
-
-  <!-- <a routerLink="/users"> List Users</a>
-  <a style="margin-left:10px" routerLink="/add">Add User</a> -->
+  <a [routerLink]="routerLinkList"> List Users</a>
+  <a style="margin-left:10px" [routerLink]="routerLinkAdd">Add User</a>
   <br />
   <router-outlet></router-outlet>
 </div>

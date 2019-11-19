@@ -1,17 +1,15 @@
-import { UserModule } from './user/user.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 
-const routes: Routes = [
+const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', component: LoginComponent },
-  { path: 'users', 
-  loadChildren : () => UserModule }
+  { path: 'users', loadChildren : () => import('./user/user.module').then(m => m.UserModule) }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

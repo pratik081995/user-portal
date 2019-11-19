@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, RequiredValidator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,28 +8,23 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup;
-  submitted = false;
-  invalidLogin = false;
+  invalidLogin: boolean = false;
+  loginForm: any = {};
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private router: Router) { }
 
   onSubmit() {
-    this.submitted = true;
-    if (this.loginForm.invalid) {
-      return;
+    if (this.loginForm.email == 'pratik@gmail.com' && this.loginForm.password == 'pra@123') {
+      this.router.navigate(['users/list-user']);
     }
-    if (this.loginForm.controls.email.value === 'pratik@gmail.com' && this.loginForm.controls.password.value === 'pra@123') {
-      this.router.navigate(['list-user']);
-    } else {
+    else {
       this.invalidLogin = true;
     }
   }
 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
-    });
+    this.loginForm.email = '';
+    this.loginForm.password = '';
   }
 }
+
