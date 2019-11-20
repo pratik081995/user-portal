@@ -12,7 +12,7 @@ import { UserService } from './service/user.service';
   declarations: [
     AppComponent,
     LoginComponent
-  ],
+  ],  
   imports: [
     BrowserModule,
     AppRoutingModule,

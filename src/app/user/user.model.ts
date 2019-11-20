@@ -6,4 +6,6 @@ export class User {
     email: string;
     city: string;
     mobileNumber: number;
+
+    constructor(public name: string, public age: number){}
 }

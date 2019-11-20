@@ -9,7 +9,6 @@ import { UserService } from '../../service/user.service';
   styleUrls: ['./add-user.component.scss']
 })
 export class AddUserComponent implements OnInit {
-
   constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService) { }
 
   addForm: FormGroup;

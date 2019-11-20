@@ -9,4 +9,6 @@ export class AppComponent {
   title = 'user-registration';
   routerLinkList ="/users/list-user";
   routerLinkAdd = "/users/add-user";
+  routerLinkLog ="/users/details";
+
 }

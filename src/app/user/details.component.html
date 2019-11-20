@@ -1,0 +1,12 @@
+<div class="user">
+  <form #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)">
+    <p>Name: <input name="name" [(ngModel)]="user.name"></p>
+    <p>Age:<input name="age" [(ngModel)]="user.age"></p>
+    <button>Submit</button>
+  </form>
+</div>
+<div class="message">
+  <p>Message: <input [(ngModel)]="msg" /></p>
+</div>
+
+<app-user [user]="user" [message]="msg"></app-user>
