@@ -11,6 +11,7 @@ import { UserService } from '../../service/user.service';
 export class AddUserComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService) { }
 
+  submitted: boolean = false;
   addForm: FormGroup;
 
   ngOnInit() {
@@ -29,5 +30,6 @@ export class AddUserComponent implements OnInit {
       .subscribe(data => {
         this.router.navigate(['users/list-user']);
       });
+    this.submitted = true;
   }
 }
