@@ -1,6 +1,6 @@
 import { User } from './user.model';
 import { Component } from '@angular/core';
-import { NgForm,FormsModule } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -8,12 +8,12 @@ import { NgForm,FormsModule } from '@angular/forms';
     templateUrl: 'details.component.html'
 })
 export class DetailsComponent {
-    user = new User('Steve', 20);
+    user = new User('Steve', 20000);
     msg: string = 'Hello';
 
     onFormSubmit(userForm: NgForm) {
         let name = userForm.controls['name'].value;
-        let age = userForm.controls['age'].value;
-        this.user = new User(name, age);
+        let salary = userForm.controls['salary'].value;
+        this.user = new User(name, salary);
     }
 }

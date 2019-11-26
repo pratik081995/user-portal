@@ -13,13 +13,10 @@ export class UserComponent implements OnChanges, OnInit {
     allMsgChangeLogs: string[] = [];
     allUserChangeLogs: string[] = [];
 
-
-
     ngOnChanges(changes: SimpleChanges) {
-
+        // console.log(changes)
         for (let propName in changes) {
             let change = changes[propName];
-
             let curVal = JSON.stringify(change.currentValue);
             let prevVal = JSON.stringify(change.previousValue);
             let changeLog = `${propName}: currentValue = ${curVal}, previousValue = ${prevVal}`;
@@ -35,6 +32,9 @@ export class UserComponent implements OnChanges, OnInit {
     ngOnInit() {
         this.message = "Welcome";
         console.log(`ngOnInit  - Message is ${this.message}`);
-
     }
 }
+
+
+
+

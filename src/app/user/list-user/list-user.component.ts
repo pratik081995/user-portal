@@ -1,7 +1,8 @@
 import { UserService } from '../../service/user.service';
 import { Router } from '@angular/router';
 import { User } from '../user.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -9,13 +10,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './list-user.component.html',
   styleUrls: ['./list-user.component.scss']
 })
-export class ListUserComponent implements OnInit {
-
+export class ListUserComponent implements OnInit, OnDestroy {
+  myData: Subscription
   users: User[];
   constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getUsers();
+    this.myData = this.userService.getUsers()
+      .subscribe(data => {
+        this.users = data;
+      });
   }
 
   deleteUser(user: User): void {
@@ -34,4 +38,17 @@ export class ListUserComponent implements OnInit {
   addUser(): void {
     this.router.navigate(['users/add-user']);
   }
+
+  @HostListener('window:beforeunload')
+  ngOnDestroy() {
+    if (this.myData) {
+      this.myData.unsubscribe();
+      console.log("destroy method called");
+    }
+  }
 }
+
+
+
+
+

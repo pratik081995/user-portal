@@ -30,6 +30,7 @@ export class EditUserComponent implements OnInit {
       lastName: ['', Validators.required],
       email: ['', Validators.required],
       city: ['', Validators.required],
+      age: ['', Validators.required],
       mobileNumber: ['', Validators.required],
     });
     this.userService.getUserById(+userId)
@@ -44,6 +45,7 @@ export class EditUserComponent implements OnInit {
       .subscribe(
         data => {
           this.router.navigate(['users/list-user']);
+          alert("User updated successfully");
         },
         error => {
           alert(error);

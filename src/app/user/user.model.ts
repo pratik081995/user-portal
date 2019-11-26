@@ -5,7 +5,8 @@ export class User {
     lastName: string;
     email: string;
     city: string;
+    age: string;
     mobileNumber: number;
 
-    constructor(public name: string, public age: number){}
+    constructor(public name: string, public salary: number) { }
 }

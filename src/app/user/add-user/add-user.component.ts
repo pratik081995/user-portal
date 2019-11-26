@@ -21,7 +21,8 @@ export class AddUserComponent implements OnInit {
       lastName: ['', Validators.required],
       email: ['', Validators.required],
       city: ['', Validators.required],
-      mobileNumber: ['', Validators.required],
+      age: ['', Validators.required],
+      mobileNumber: ['', Validators.required]
     });
   }
 
@@ -30,6 +31,8 @@ export class AddUserComponent implements OnInit {
       .subscribe(data => {
         this.router.navigate(['users/list-user']);
       });
-    this.submitted = true;
+    if (this.submitted = true)
+      alert("User added successfully");
   }
 }
+

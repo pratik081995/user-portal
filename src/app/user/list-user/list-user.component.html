@@ -1,5 +1,5 @@
-<div align ="right"><a href="/login" class="btn btn-danger">Logout</a></div>
-<div class="col-md-6">
+<div align="right"><a href="/login" class="btn btn-danger">Logout</a></div>
+<div class="col-md-8">
   <h2> User Details</h2>
   <button class="btn btn-danger" (click)="addUser()"> Add User</button>
   <table class="table table-striped">
@@ -10,6 +10,7 @@
         <th>Last Name</th>
         <th>Email</th>
         <th>City</th>
+        <th>Age</th>
         <th>Mobile Number</th>
         <th>Action</th>
       </tr>
@@ -21,9 +22,11 @@
         <td>{{ user.lastName }}</td>
         <td>{{ user.email }}</td>
         <td>{{ user.city }}</td>
+        <td>{{ user.age }}</td>
         <td>{{ user.mobileNumber }}</td>
         <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete</button>
-          <button class="btn btn-danger" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button></td>
+          <button class="btn btn-danger" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button>
+        </td>
       </tr>
     </tbody>
   </table>

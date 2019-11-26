@@ -1,7 +1,7 @@
 <div class="user">
   <form #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)">
-    <p>Name: <input name="name" [(ngModel)]="user.name"></p>
-    <p>Age:<input name="age" [(ngModel)]="user.age"></p>
+    <p>Name: <input name="name" [ngModel]="user.name"></p>
+    <p>Salary:<input name="salary" [ngModel]="user.salary"></p>
     <button>Submit</button>
   </form>
 </div>
